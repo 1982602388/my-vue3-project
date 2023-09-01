@@ -16,7 +16,7 @@
               <image
                 class="image"
                 :src="item.imgUrl"
-                mode="widthFix"
+                mode="aspectFill"
               />  
             </navigator>
         </swiper-item>

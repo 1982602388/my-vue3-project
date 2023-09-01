@@ -191,7 +191,8 @@ page {
   justify-content: space-between;
   padding: 0 20rpx 20rpx;
   .navigator {
-    width: 44.5%;
+    width: 42vw;
+    /* width: 44.5%; */
     padding: 20rpx;
     margin-top: 20rpx;
     border-radius: 10rpx;
