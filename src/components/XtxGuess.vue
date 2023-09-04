@@ -111,9 +111,9 @@ defineExpose({
   padding: 0 20rpx;
   .guess-item {
     /* width: 44.5%; */
-    width: 42vw;
+    /* width: 42vw; */
     /* width: 310rpx; */
-    /* width: 345rpx; */
+    width: 345rpx;
     padding: 24rpx 20rpx 20rpx;
     margin-bottom: 20rpx;
     border-radius: 10rpx;
