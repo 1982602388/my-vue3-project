@@ -87,14 +87,14 @@ onReady(() => {
 const order = ref<OrderResult>()
 const getMemberOrderByIdData = async () => {
   const res = await getMemberOrderByIdAPI(query.id)
-  order.value = res.result
-  console.log(order.value,'order');
-  
-  if (
-    [OrderState.DaiShouHuo, OrderState.DaiPingJia, OrderState.YiWanCheng].includes(
+  order.value = res.result  
+  const isGetOrder= [OrderState.DaiShouHuo, OrderState.DaiPingJia, OrderState.YiWanCheng].includes(
       order.value.orderState,
-    )
-  ) {
+  ) //是否显示发货信息的条件
+
+  console.log(isGetOrder,'isGetOrder');
+  
+  if (isGetOrder) {
     getMemberOrderLogisticsByIdData()
   }
 }
@@ -103,10 +103,12 @@ const getMemberOrderByIdData = async () => {
 const logisticList = ref<LogisticItem[]>([])
 const getMemberOrderLogisticsByIdData = async () => {
   const res = await getMemberOrderLogisticsByIdAPI(query.id)
+  
   logisticList.value = res.result.list
 }
 
 onLoad(() => {
+  
   getMemberOrderByIdData()
 })
 
@@ -146,6 +148,7 @@ const onOrderSend = async () => {
     uni.showToast({ icon: 'success', title: '模拟发货完成' })
     // 主动更新订单状态
     order.value!.orderState = OrderState.DaiShouHuo
+    getMemberOrderByIdData()
   }
 }
 // 确认收货
