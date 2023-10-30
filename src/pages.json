@@ -38,7 +38,14 @@
 		{
 			"path": "pages/cart/cart",
 			"style": {
-				"navigationBarTitleText": "",
+				"navigationBarTitleText": "购物车",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/cart/cart2",
+			"style": {
+				"navigationBarTitleText": "购物车",
 				"enablePullDownRefresh": false
 			}
 		},
@@ -63,7 +70,7 @@
 		{
 			"path": "pages/login/login",
 			"style": {
-				"navigationBarTitleText": "login"
+				"navigationBarTitleText": "登录"
 			}
 		}
 	],
@@ -131,13 +138,38 @@
 					}
 				},
 				{
-          			"path": "address-form/address-form",
-         			"style": {
-           			"navigationBarTitleText": "address-form"
-          }
-        }
+					"path": "address-form/address-form",
+					"style": {
+						"navigationBarTitleText": "address-form"
+					}
+				}
+			]
+		},
+		{
+			"root": "pagesOrder",
+			"pages": [
+				{
+					"path": "create/create",
+					"style": {
+						"navigationBarTitleText": "填写订单"
+					}
+				},
+				{
+					"path": "detail/detail",
+					"style": {
+						"navigationBarTitleText": "订单详情",
+						"navigationStyle": "custom"
+					}
+				},
+				{
+					"path": "payment/payment",
+					"style": {
+						"navigationBarTitleText": "支付结果"
+					}
+				}
 			]
 		}
+		
 	],
 	// 分包预下载规则
 	"preloadRule": {
